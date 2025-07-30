@@ -1,0 +1,47 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: black;
+  
+    .bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 300px;
+      background-color: white;
+      z-index: 999; // Ensure it's on top
+  
+      .links {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+  
+        a {
+          font-size: 40px;
+        }
+      }
+    }
+  
+    .toggleButton { // Changed from 'button' to a class for specificity
+      width: 50px; // Corrected width
+      height: 50px; // Corrected height
+      border-radius: 50%;
+      position: fixed; // Make it stay in place
+      top: 25px;
+      left: 25px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 1000; // Ensure it's above the sidebar background
+    }
+  }
+  
