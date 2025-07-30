@@ -25,13 +25,13 @@
         font-size: 28px;
         color: rgb(201, 160, 242);
         letter-spacing: 9px;
-        filter: drop-shadow(0px 0px 10px #dfdf09ef);
+        filter: drop-shadow(0px 0px 20px #a958f0ef);
       }
   
       h1 {
         font-size: 59px;
         line-height: 1.1;
-        filter: drop-shadow(0px 0px 10px #dfdf09ef);
+        filter: drop-shadow(0px 0px 9px #dfdf09ef);
       }
   
       .buttons {
@@ -44,11 +44,11 @@
           margin-right: 20px;
           cursor: pointer;
           font-weight: 300;
-          box-shadow: 0 0 10px rgba(255, 255, 0, 0.3);
+          box-shadow: 0 0 10px #a958f0ef;
           transition: box-shadow 0.3s ease;
   
           &:hover {
-            box-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
+            box-shadow: 0 0 20px #a958f0ef;
           }
         }
       }
