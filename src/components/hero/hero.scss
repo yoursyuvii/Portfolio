@@ -23,13 +23,15 @@
   
       h2 {
         font-size: 28px;
-        color: rebeccapurple;
+        color: rgb(201, 160, 242);
         letter-spacing: 9px;
+        filter: drop-shadow(0px 0px 10px #dfdf09ef);
       }
   
       h1 {
         font-size: 59px;
         line-height: 1.1;
+        filter: drop-shadow(0px 0px 10px #dfdf09ef);
       }
   
       .buttons {
