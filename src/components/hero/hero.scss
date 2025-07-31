@@ -108,24 +108,40 @@
     }
     
     // Responsive styles
-    @media (max-width: 768px) {
-      .wrapper {
-        flex-direction: column;
-        justify-content: center;
+    @media (max-width: 1024px) {
+    .wrapper {
+      padding: 0 50px;
+    }
+    .textContainer {
+      padding-left: 50px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .wrapper {
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 20px;
+    }
+    .textContainer {
+      height: 50%;
+      width: 100%;
+      padding: 0;
+      text-align: center;
+      align-items: center;
+      gap: 20px;
+      h1 {
+        font-size: 2.5rem;
       }
-      .textContainer {
-        height: 50%;
-        width: 100%;
-        padding: 0 20px;
-        text-align: center;
-        align-items: center;
-        gap: 20px;
-      }
-      .imageContainer {
-        height: 50%;
-        width: 100%;
-        position: relative; // Change from absolute for mobile layout
+      h2 {
+        font-size: 1.5rem;
       }
     }
+    .imageContainer {
+      height: 50%;
+      width: 100%;
+      position: relative; // Change from absolute for mobile layout
+    }
+  }
   }
   

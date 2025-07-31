@@ -9,7 +9,7 @@ const certificatesData = [
     issuer: "Google Cloud",
     year: "2024",
     description: "Gained hands-on experience in cloud infrastructure, IAM, networking, and Kubernetes using Google Cloud technologies.",
-    icon: "./public/google.png", // Google Cloud Logo
+    icon: "/google.png", // Google Cloud Logo
     color: "#4285F4",
   },
   {
@@ -18,7 +18,7 @@ const certificatesData = [
     issuer: "Microsoft",
     year: "2023",
     description: "Demonstrated foundational knowledge of cloud concepts, Azure services, pricing models, and governance tools.",
-    icon: "./public/microsoft.jpg", // Microsoft Azure Logo
+    icon: "/microsoft.jpg", // Microsoft Azure Logo
     color: " #FBBC05",
   },
   {
@@ -27,7 +27,7 @@ const certificatesData = [
     issuer: "Oracle",
     year: "2023",
     description: "Validated skills in object-oriented programming, core Java syntax, and application development using the Java SE platform.",
-    icon: "./public/oracle.png", // Oracle Logo
+    icon: "/oracle.png", // Oracle Logo
     color: "#F80000",
   },
 ];

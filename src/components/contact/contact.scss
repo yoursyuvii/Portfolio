@@ -194,3 +194,12 @@
     }
   }
 }
+
+@media (max-width: 480px) {
+  .contact .page-title {
+    font-size: 2rem;
+  }
+  .contact .formContainer form {
+    padding: 20px;
+  }
+}

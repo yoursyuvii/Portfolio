@@ -53,12 +53,22 @@
     }
   }
 
+  @media (max-width: 1024px) {
+    .wrapper {
+      padding: 0 30px;
+    }
+  }
+
   // Responsive adjustments
   @media (max-width: 768px) {
     height: 80px;
     .wrapper {
-      padding: 200px;
-      .logo { margin-right: 220px; } // Space for the toggle button
+      padding: 0 20px;
+      justify-content: flex-end;
+      .logo {
+        display: none;
+      }
     }
   }
 }
+

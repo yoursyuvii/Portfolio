@@ -15,7 +15,7 @@ const Portfolio = () => {
       category: "frontend",
       description: "Designed and developed a dynamic Quiz Web Application using HTML, CSS, and JavaScript with an interactive UI and real-time score tracking.",
       technologies: ["HTML", "CSS", "JavaScript", "Vercel"],
-      image: "./public/kbc.png",
+      image: "/kbc.png",
       github: "https://github.com/yoursyuvii/KBC.git",
       live: "https://kbc-woad.vercel.app/", // Replace with your Vercel link
       featured: true,
@@ -27,7 +27,7 @@ const Portfolio = () => {
       category: "frontend",
       description: "Developed a responsive web application using HTML, CSS, and JavaScript to convert temperature units between Celsius, Fahrenheit, and Kelvin.",
       technologies: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
-      image: "./public/temp.png",
+      image: "/temp.png",
       github: "https://github.com/yoursyuvii/TemperatureConverter.git",
       live: "https://temperature-converter-yoursyuvii.vercel.app/", // Replace with your GitHub Pages link
       featured: true,

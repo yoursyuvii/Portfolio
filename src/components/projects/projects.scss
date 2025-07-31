@@ -237,6 +237,15 @@
     }
   }
 
+  @media (max-width: 1024px) {
+    .container {
+      padding: 0 30px;
+    }
+    .projects-grid {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+  }
+
   // Responsive Design
   @media (max-width: 768px) {
     padding: 60px 0;

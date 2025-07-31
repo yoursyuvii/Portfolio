@@ -485,4 +485,15 @@
       }
     }
   }
+
+  @media (max-width: 480px) {
+    .textContainer h1 {
+      font-size: 28px;
+    }
+    .educationSection .sectionHeader h2,
+    .skillsSection .sectionHeader h2,
+    .projectsSection .sectionHeader h2 {
+      font-size: 28px;
+    }
+  }
 }

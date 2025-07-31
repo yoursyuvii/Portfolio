@@ -124,3 +124,19 @@ body {
     }
   }
 }
+
+// --- Responsive Breakpoints ---
+
+// Tablet and smaller
+@media (max-width: 1024px) {
+  .app section {
+    padding: 2rem 1rem;
+  }
+}
+
+// Mobile devices
+@media (max-width: 768px) {
+  .app section {
+    padding: 1rem 0.5rem;
+  }
+}
