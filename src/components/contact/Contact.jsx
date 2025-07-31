@@ -87,7 +87,7 @@ const Contact = () => {
 
                     {/* --- RESUME CARD --- */}
                     <motion.div className="infoCard resume-card" variants={variants}>
-                      <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="card-link">
+                      <a href="/resume.jpg" target="_blank" rel="noopener noreferrer" className="card-link">
                         <FiFileText className="icon" />
                         <h2>Resume</h2>
                         <span>View & Download</span>

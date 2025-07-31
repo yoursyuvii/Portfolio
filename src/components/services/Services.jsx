@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 export const Services = () => {
   const education = [
     { id: 1, institution: "Technocrats Institute of Technology, Bhopal", degree: "B.Tech, Computer Science Engineering", grade: "7.58 CGPA", duration: "2022 - 2026", icon: "🎓" },
-    { id: 2, institution: "J. D. Public School, Saran", degree: "Class XII", grade: "7 CGPA", duration: "2019", icon: "📚" },
-    { id: 3, institution: "Bhagwant VidyaPeeth", degree: "Class X", grade: "6.6 CGPA", duration: "2019", icon: "📖" }
+    { id: 2, institution: "J. D. Public School, Saran", degree: "Class XII", grade: "70%", duration: "2021", icon: "📚" },
+    { id: 3, institution: "Bhagwant VidyaPeeth, Chhapra", degree: "Class X", grade: "66%", duration: "2019", icon: "📖" }
   ];
 
   const skills = {
