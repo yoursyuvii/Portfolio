@@ -39,7 +39,7 @@ export const Hero = () => {
           </motion.h1>
           <motion.div className="buttons" variants={textVariants}>
             <motion.button className="primary-btn" variants={buttonVariants} whileHover="hover" whileTap="tap" onClick={() => scrollToSection('portfolio')}>
-              <span>See Latest Works</span>
+              <span>Latest Work 💻</span>
             </motion.button>
             <motion.button className="secondary-btn" variants={buttonVariants} whileHover="hover" whileTap="tap" onClick={() => scrollToSection('contact')}>
               <span>Contact Me</span>
