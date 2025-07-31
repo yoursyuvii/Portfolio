@@ -42,7 +42,8 @@ const Navbar = () => {
         >
           {[
             { href: "https://www.linkedin.com/in/yoursyuvii/", src: "/linkedin.png", alt: "LinkedIn", hoverColor: "#0077b5" },
-            { href: "https://github.com/yoursyuvii", src: "/git.png", alt: "GitHub", hoverColor: "#333" },
+            { href: "https://github.com/yoursyuvii", src: "/git.png", alt: "GitHub", hoverColor: "#800080" },
+            { href: "https://www.x.com/yoursyuvii", src: "/x.jpg", alt: "twitter", hoverColor: "#FFFFFF" },
             { href: "https://www.codechef.com/users/yourssyuvii", src: "/codechef.png", alt: "CodeChef", hoverColor: "#5B4638" },
             { href: "https://www.instagram.com/yoursyuvii", src: "/instagram.png", alt: "Instagram", hoverColor: "#E4405F" }
           ].map((social, index) => (
@@ -54,7 +55,7 @@ const Navbar = () => {
               className="social-link"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
+              transition={{ duration: 0.4, delay: 0 + index * 0.1 }}
               whileHover={{ 
                 scale: 1.2,
                 rotate: 5,

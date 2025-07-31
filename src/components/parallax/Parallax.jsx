@@ -11,7 +11,7 @@ export const Parallax = ({ type }) => {
   });
 
   // --- UPDATED: Multi-directional parallax transforms ---
-  const yText = useTransform(scrollYProgress, [0, 1], ["0%", "500%"]); // Text moves down faster
+  const yText = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]); // Text moves down faster
   const yPlanets = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]); // Planets move down
   const yMountains = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]); // Mountains move up
   const xStars = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]); // Stars move left
