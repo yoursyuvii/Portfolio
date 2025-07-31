@@ -1,28 +1,50 @@
 .navbar {
-    height: 100px;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 998; // Lower z-index so sidebar is on top
   
-    .wrapper {
-      max-width: 1366px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 100%;
-      padding: 0 50px;
-      filter: drop-shadow(0px 0px 10px #dfdf09ef);
-      
+  // The glass effect
+  // backdrop-filter: blur(10px);
+  // -webkit-backdrop-filter: blur(10px);
   
-      span {
+  // // A subtle border to separate from content
+  // border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  .wrapper {
+    max-width: 1366px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0 50px;
+
+    .logo {
+      // Styles for your logo
+      .name {
         font-weight: bold;
-        font-size: 20px;
-        margin-left: 100px; // Pushes the name away from the sidebar button
+        font-size: 24px;
+        color: white;
+        margin: 4em;
       }
-  
-      .social {
-        display: flex;
-        gap: 20px;
-        filter: drop-shadow(0px 0px 2px #dfdf09ef);
-  
+      .name-underline {
+        
+        height: 2px;
+        background: linear-gradient(90deg, #a958f0, #dfdf09);
+        margin-top: 4px;
+        margin-left: 6em;
+
+      }
+    }
+
+    .social {
+      display: flex;
+      gap: 20px;
+
+      .social-link {
         img {
           width: 20px;
           height: 20px;
@@ -30,4 +52,13 @@
       }
     }
   }
-  
+
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    height: 80px;
+    .wrapper {
+      padding: 200px;
+      .logo { margin-right: 220px; } // Space for the toggle button
+    }
+  }
+}

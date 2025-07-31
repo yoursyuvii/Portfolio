@@ -1,28 +1,105 @@
+// --- Global Resets and Base Styles ---
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 html {
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-  }
-  
-  * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "DM Sans", sans-serif;
-  }
-  
-  body {
-    background-color: #0c0c1d;
-    color: lightgray;
-  }
-  
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
+  scroll-behavior: smooth;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #0c0c1d;
+  color: white;
+  overflow-x: hidden;
+}
+
+// --- Main App Container ---
+.app {
+  overflow-x: hidden;
+
+  // --- Section Wrappers ---
   section {
-    height: 100vh;
-    scroll-snap-align: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    position: relative;
+    background: linear-gradient(180deg, #0c0c1d, #111132);
+
+    // Add a subtle border between content sections
+    &:not(.parallax):not(#Homepage) {
+      border-bottom: 1px solid rgba(201, 160, 242, 0.1);
+    }
+
+    // Styles for parallax sections
+    &.parallax {
+      padding: 0;
+      height: 100vh;
+    }
+
+    // Specific style overrides for the Homepage section
+    &#Homepage {
+      padding: 0;
+      background: #0c0c1d;
+      display: block; // Let the Hero component control its own layout
+    }
   }
-  
-  
+}
+
+// --- Custom Scrollbar ---
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0c0c1d;
+}
+
+
+
+// --- Accessibility & Performance Media Queries ---
+
+// Reduce motion for users who prefer it
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  section {
+    background: #000;
+    color: #fff;
+    border-bottom-color: #fff;
+  }
+}
+
+// Print styles
+@media print {
+  section.parallax,
+  .sidebar,
+  .toggle-button,
+  .custom-cursor {
+    display: none;
+  }
+
+  section {
+    background: white !important;
+    color: black !important;
+    min-height: auto;
+    
+    * {
+      background: transparent !important;
+      color: black !important;
+      text-shadow: none !important;
+    }
+  }
+}

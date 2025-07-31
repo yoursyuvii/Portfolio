@@ -1,0 +1,52 @@
+.certificates {
+  padding: 100px 0;
+  background: #0c0c1d;
+  color: white;
+
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 60px;
+    h2 { font-size: 24px; color: orange; }
+    h1 { font-size: 48px; .gradient-text { background: linear-gradient(90deg, #a958f0, #dfdf09); -webkit-background-clip: text; -webkit-text-fill-color: transparent; } }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    overflow: hidden;
+
+    .card-header {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border-top: 4px solid;
+      
+      .issuer-icon { width: 40px; height: 40px; }
+      .title-group { flex-grow: 1; h3 { font-size: 18px; } h4 { font-size: 14px; color: lightgray; } }
+      .year { font-weight: bold; color: orange; }
+    }
+
+    .card-body {
+      padding: 20px;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #ccc;
+    }
+  }
+}

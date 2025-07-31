@@ -1,0 +1,100 @@
+.contact {
+  min-height: 100vh;
+  max-width: 1366px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+
+  .textContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    h1 {
+      font-size: 100px;
+      line-height: 88px;
+      color: orange;
+    }
+
+    h2 {
+      font-size: 30px;
+    }
+
+    span {
+      font-weight: 300;
+      color: lightgray;
+    }
+  }
+
+  .formContainer {
+    flex: 1;
+    position: relative;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      input,
+      textarea {
+        padding: 20px;
+        background-color: transparent;
+        border: 1px solid white;
+        color: white;
+        border-radius: 5px;
+      }
+
+      button {
+        padding: 20px;
+        border: none;
+        background-color: orange;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 18px;
+        border-radius: 5px;
+        color: black;
+      }
+
+      .message {
+        margin-top: 10px;
+        font-size: 14px;
+        text-align: center;
+
+        &.success {
+          color: #34d399; // A nice green for success
+        }
+
+        &.error {
+          color: #f87171; // A soft red for errors
+        }
+      }
+    }
+  }
+
+  // Responsive Design
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 20px;
+    gap: 30px;
+    width: 100%;
+
+    .textContainer {
+      gap: 20px;
+      text-align: center;
+      align-items: center;
+      margin-top: 50px;
+
+      h1 {
+        font-size: 48px;
+        line-height: 1.1;
+      }
+    }
+
+    .formContainer {
+      width: 100%;
+      max-width: 500px;
+    }
+  }
+}

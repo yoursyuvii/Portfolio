@@ -10,37 +10,61 @@ export const Parallax = ({ type }) => {
     offset: ["start start", "end start"],
   });
 
-  const yText = useTransform(scrollYProgress, [0, 1], ["0%", "500%"]);
-  const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  // --- UPDATED: Multi-directional parallax transforms ---
+  const yText = useTransform(scrollYProgress, [0, 1], ["0%", "500%"]); // Text moves down faster
+  const yPlanets = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]); // Planets move down
+  const yMountains = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]); // Mountains move up
+  const xStars = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]); // Stars move left
+
+  const parallaxConfig = {
+    services: {
+      title: "About Me",
+      subtitle: "Education • Skills • Experience",
+      planetImage: "/planets.png",
+      titleColor: "#a958f0"
+    },
+    portfolio: {
+      title: "My Projects",
+      subtitle: "Innovation • Creativity • Development",
+      planetImage: "/sun.png",
+      titleColor: "#dfdf09"
+    },
+    contact: {
+      title: "Let's Connect",
+      subtitle: "Collaboration • Opportunities • Communication",
+      planetImage: "/planets.png",
+      titleColor: "#a958f0"
+    }
+  };
+
+  const config = parallaxConfig[type] || parallaxConfig.services;
 
   return (
     <div
       className="parallax"
       ref={ref}
       style={{
-        background:
-          type === "services"
-            ? "linear-gradient(180deg, #111132, #0c0c1d)"
-            : "linear-gradient(180deg, #111132, #505064)",
+        background: type === 'portfolio' 
+          ? "linear-gradient(180deg, #111132, #505064)" 
+          : "linear-gradient(180deg, #111132, #0c0c1d)",
       }}
     >
-      <motion.h1 style={{ y: yText }}>
-        {type === "services" ? "What We Do?" : "What I've Done"}
-      </motion.h1>
-      <motion.div className="mountains"></motion.div>
-
-      {/* FIXED: Combined duplicate style props and corrected syntax */}
-      <motion.div
-        className="planets"
-        style={{
-          y: yBg,
-          backgroundImage: `url(${
-            type === "services" ? "/planets.png" : "/sun.png"
-          })`,
-        }}
-      ></motion.div>
+      <motion.div className="content" style={{ y: yText }}>
+        <h1 style={{ color: config.titleColor }}>{config.title}</h1>
+        <p>{config.subtitle}</p>
+      </motion.div>
       
-      <motion.div style={{ x: yBg }} className="stars"></motion.div>
+      <motion.div className="mountains" style={{ y: yMountains }} />
+      
+      <motion.div 
+        className="planets" 
+        style={{ 
+          y: yPlanets, 
+          backgroundImage: `url(${config.planetImage})` 
+        }} 
+      />
+      
+      <motion.div className="stars" style={{ x: xStars }} />
     </div>
   );
 };
