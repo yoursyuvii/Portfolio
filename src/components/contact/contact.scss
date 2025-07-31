@@ -1,100 +1,208 @@
+// Main container for the contact section
 .contact {
   min-height: 100vh;
   max-width: 1366px;
   margin: auto;
   display: flex;
-  align-items: center;
+  align-items: stretch; // Make columns equal height
   gap: 50px;
+  padding: 50px 20px;
 
+  // Left side with text and contact info
   .textContainer {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 30px;
+    justify-content: center;
 
     h1 {
-      font-size: 100px;
-      line-height: 88px;
+      font-size: clamp(3rem, 8vw, 5rem); // Responsive font size
+      line-height: 1.1;
       color: orange;
+      text-shadow: 0 0 20px rgba(255, 165, 0, 0.3);
     }
 
-    h2 {
-      font-size: 30px;
+    .infoCard, .messageSection {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 25px;
+      backdrop-filter: blur(5px);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .icon {
+        font-size: 28px;
+        color: orange;
+        margin-bottom: 5px;
+      }
+
+      h2 {
+        font-size: 24px;
+        font-weight: 600;
+        color: white;
+      }
+
+      span, a {
+        font-weight: 300;
+        color: lightgray;
+        font-size: 16px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        &:hover {
+          color: orange;
+        }
+      }
     }
 
-    span {
-      font-weight: 300;
-      color: lightgray;
+    .messageSection p {
+      line-height: 1.7;
+      color: #ccc;
     }
   }
 
+  // Right side with the form
   .formContainer {
     flex: 1;
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     form {
+      width: 100%;
       display: flex;
       flex-direction: column;
       gap: 20px;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 40px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+
+      h2 {
+        text-align: center;
+        font-size: 32px;
+        color: orange;
+        margin-bottom: 10px;
+      }
 
       input,
       textarea {
-        padding: 20px;
-        background-color: transparent;
-        border: 1px solid white;
+        padding: 18px;
+        background-color: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.2);
         color: white;
-        border-radius: 5px;
+        border-radius: 8px;
+        font-size: 16px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+        &::placeholder {
+          color: #888;
+        }
+
+        &:focus {
+          outline: none;
+          border-color: orange;
+          box-shadow: 0 0 15px rgba(255, 165, 0, 0.3);
+        }
       }
 
       button {
-        padding: 20px;
+        padding: 18px;
         border: none;
-        background-color: orange;
+        background: orange;
+        color: #0c0c1d;
         cursor: pointer;
-        font-weight: 500;
+        font-weight: 600;
         font-size: 18px;
-        border-radius: 5px;
-        color: black;
+        border-radius: 8px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+
+        &:hover {
+          background: #ffc966;
+          transform: translateY(-2px);
+        }
       }
 
       .message {
-        margin-top: 10px;
+        margin-top: 5px;
         font-size: 14px;
         text-align: center;
+        padding: 10px;
+        border-radius: 5px;
 
         &.success {
-          color: #34d399; // A nice green for success
+          color: #10b981;
+          background-color: rgba(16, 185, 129, 0.1);
         }
 
         &.error {
-          color: #f87171; // A soft red for errors
+          color: #f43f5e;
+          background-color: rgba(244, 63, 94, 0.1);
         }
       }
     }
   }
+}
 
-  // Responsive Design
-  @media (max-width: 768px) {
+// Footer styles
+.footer {
+  background: #0c0c1d; // Darker background for contrast
+  padding: 40px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  
+  .footer-content {
+    max-width: 1366px;
+    margin: auto;
+    text-align: center;
+    color: #aaa;
+
+    .social-icons {
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+
+      a {
+        color: #aaa;
+        font-size: 24px;
+        transition: color 0.3s ease, transform 0.3s ease;
+        &:hover {
+          color: orange;
+          transform: translateY(-3px);
+        }
+      }
+    }
+
+    .made-by {
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .copyright {
+      font-size: 14px;
+      color: #777;
+    }
+  }
+}
+
+
+// Responsive Design
+@media (max-width: 768px) {
+  .contact {
     flex-direction: column;
-    padding: 20px;
-    gap: 30px;
-    width: 100%;
+    padding: 30px 15px;
+    gap: 40px;
+    align-items: center;
 
     .textContainer {
-      gap: 20px;
       text-align: center;
       align-items: center;
-      margin-top: 50px;
-
-      h1 {
-        font-size: 48px;
-        line-height: 1.1;
-      }
     }
 
     .formContainer {
       width: 100%;
-      max-width: 500px;
     }
   }
 }

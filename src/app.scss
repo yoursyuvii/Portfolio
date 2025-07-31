@@ -14,52 +14,73 @@ body {
   background: #0c0c1d;
   color: white;
   overflow-x: hidden;
+  
+  // ONLY FIX: Correct path for stars background
+  background-image: url('/stars.png');
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-size: auto;
+  background-position: 0 0;
 }
 
 // --- Main App Container ---
 .app {
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  scrollbar-width: none; /* For Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+  }
   overflow-x: hidden;
-
+  
+  // Make app container transparent to show stars background
+  background: transparent;
+  
   // --- Section Wrappers ---
   section {
+    scroll-snap-align: center;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 4rem 2rem;
     position: relative;
-    background: linear-gradient(180deg, #0c0c1d, #111132);
-
+    
+    // Use semi-transparent gradient over stars
+    background: linear-gradient(180deg, rgba(12, 12, 29, 0.8), rgba(17, 17, 50, 0.8));
+    
     // Add a subtle border between content sections
-    &:not(.parallax):not(#Homepage) {
-      border-bottom: 1px solid rgba(201, 160, 242, 0.1);
-    }
-
+    // &:not(.parallax):not(#Homepage) {
+    //   border-bottom: 1px solid rgba(201, 160, 242, 0.1);
+    // }
+    
     // Styles for parallax sections
     &.parallax {
       padding: 0;
       height: 100vh;
+      // Make parallax sections more transparent to show stars
+      background: rgba(12, 12, 29, 0.5);
     }
-
+    
     // Specific style overrides for the Homepage section
     &#Homepage {
       padding: 0;
-      background: #0c0c1d;
+      background: rgba(12, 12, 29, 0.7);
       display: block; // Let the Hero component control its own layout
     }
   }
 }
 
 // --- Custom Scrollbar ---
-::-webkit-scrollbar {
-  width: 8px;
-}
+// ::-webkit-scrollbar {
+//   width: 8px;
+// }
 
-::-webkit-scrollbar-track {
-  background: #0c0c1d;
-}
-
-
+// ::-webkit-scrollbar-track {
+//   background: #0c0c1d;
+// }
 
 // --- Accessibility & Performance Media Queries ---
 
@@ -90,7 +111,7 @@ body {
   .custom-cursor {
     display: none;
   }
-
+  
   section {
     background: white !important;
     color: black !important;

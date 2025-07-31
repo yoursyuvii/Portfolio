@@ -2,8 +2,8 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: white;
     border: 1px solid #e0e0e0;
+    background: linear-gradient(135deg,#fbef4e, #7300ff);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,5 +16,6 @@
   
     // Yeh ensure karta hai ki button sabse upar rahe
     z-index: 1000; 
+    filter: drop-shadow(0px 0px 20px #dfdf09ef);
   }
   

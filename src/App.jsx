@@ -11,55 +11,46 @@ import { CustomCursor } from './components/cursor/Cursor';
 import Sidebar from './components/sidebar/Sidebar';
 import ToggleButton from "./components/toggleButton/ToggleButton";
 
-
 const App = () => {
   const [open, setOpen] = useState(false);
 
   return (
     <div className="app">
-        <CustomCursor />
-        <Sidebar open={open} setOpen={setOpen} />
-        
-        <Navbar />
-        <ToggleButton setOpen={setOpen} />
+      <CustomCursor />
+      <Sidebar open={open} setOpen={setOpen} />
+      
+      <Navbar />
+      <ToggleButton setOpen={setOpen} />
 
-        <section id="Homepage">
-          <Hero />
+      <section id="Homepage">
+        <Hero />
+      </section>
+
+      <section id="about">
+        <Services />
+      </section>
+
+      <section id="portfolio-parallax" className="parallax">
+        <Parallax type="portfolio" />
+      </section>
+
+      <section id="portfolio">
+        <Portfolio />
+      </section>
+      
+      <section id="achievements">
+        <Certificates />
         </section>
+    
 
-        <section id="about">
-          
-            <Services />
-          
-        </section>
+      <section id="contact-parallax" className="parallax">
+        <Parallax type="contact" />
+      </section>
 
-        <section id="portfolio-parallax" className="parallax">
-          <Parallax type="portfolio" />
-        </section>
-
-        <section id="portfolio">
-            
-                <Portfolio />
-            
-        </section>
-
-
-        <section id="achievements">
-          
-            <Certificates />
-          
-        </section>
-
-        <section id="contact-parallax" className="parallax">
-          <Parallax type="contact" />
-        </section>
-
-        <section id="contact">
-          
-            <Contact />
-          
-        </section>
-      </div>
+      <section id="contact">
+        <Contact />
+      </section>
+    </div>
   );
 };
 

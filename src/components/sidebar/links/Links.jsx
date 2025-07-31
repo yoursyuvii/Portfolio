@@ -33,7 +33,13 @@ const itemVariants = {
 };
 
 const Links = ({ open, setOpen }) => {
-  const items = ["Homepage", "About", "Portfolio", "Contact"];
+  const items = [
+    { name: "Homepage", href: "#Homepage" },
+    { name: "About", href: "#about" },
+    { name: "Project", href: "#portfolio" },
+    { name: "Certificate", href: "#achievements" },
+    { name: "Contact", href: "#contact" },
+  ];
 
   const handleLinkClick = () => {
     setOpen(false);
@@ -43,14 +49,14 @@ const Links = ({ open, setOpen }) => {
     <motion.div className="links" variants={variants} animate={open ? "open" : "closed"}>
       {items.map((item) => (
         <motion.a
-          href={`#${item}`}
-          key={item}
+          href={item.href}
+          key={item.name}
           variants={itemVariants}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           onClick={handleLinkClick}
         >
-          {item}
+          {item.name}
         </motion.a>
       ))}
     </motion.div>

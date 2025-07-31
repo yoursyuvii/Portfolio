@@ -1,7 +1,8 @@
 .certificates {
   padding: 100px 0;
-  // background: #0c0c1d;
+  // background: #0c0c1d; // Uncomment for a dark background
   color: white;
+  overflow: hidden; // Prevents scrollbars during animation
 
   .container {
     max-width: 1200px;
@@ -12,13 +13,27 @@
   .header {
     text-align: center;
     margin-bottom: 60px;
-    h2 { font-size: 24px; color: orange; }
-    h1 { font-size: 48px; .gradient-text { background: linear-gradient(90deg, #a958f0, #dfdf09); -webkit-background-clip: text; -webkit-text-fill-color: transparent; } }
+    h2 {
+      font-size: 24px;
+      color: orange;
+      font-weight: 500;
+    }
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 3rem); // Responsive font size
+      margin-top: 8px;
+      .gradient-text {
+        background: linear-gradient(90deg, #a958f0, #dfdf09);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
   }
 
   .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    // Changed from grid to flex to create a single vertical column
+    display: flex;
+    flex-direction: column;
+    align-items: center; // Center the cards horizontally
     gap: 30px;
   }
 
@@ -27,26 +42,52 @@
     border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
+    -webkit-backdrop-filter: blur(10px); // For Safari support
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 650px; // Constrain width for a better look in a single column
 
     .card-header {
       padding: 20px;
       display: flex;
       align-items: center;
       gap: 15px;
-      border-top: 4px solid;
-      
-      .issuer-icon { width: 40px; height: 40px; }
-      .title-group { flex-grow: 1; h3 { font-size: 18px; } h4 { font-size: 14px; color: lightgray; } }
-      .year { font-weight: bold; color: orange; }
+      border-top: 4px solid; // Color is set inline
+
+      .issuer-icon {
+        width: 40px;
+        height: 40px;
+        object-fit: contain; // Ensures logo aspect ratio is maintained
+        flex-shrink: 0;
+      }
+      .title-group {
+        flex-grow: 1;
+        h3 {
+          font-size: 18px;
+          margin: 0;
+        }
+        h4 {
+          font-size: 14px;
+          color: lightgray;
+          margin: 4px 0 0;
+          font-weight: normal;
+        }
+      }
+      .year {
+        font-weight: bold;
+        color: orange;
+      }
     }
 
     .card-body {
-      padding: 20px;
+      padding: 0 20px 20px;
       font-size: 15px;
       line-height: 1.7;
       color: #ccc;
+      flex-grow: 1; // Allows body to fill available space
     }
   }
 }

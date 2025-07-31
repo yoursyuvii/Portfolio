@@ -36,17 +36,17 @@
 
   .mountains {
     background-image: url("/mountains.png");
-    z-index: 3;
+    z-index: 3; // Foreground
   }
 
   .planets {
     background-size: contain; // Use 'contain' for planets to avoid cropping
-    z-index: 2;
+    z-index: 2; // Middle
   }
 
   .stars {
     background-image: url("/stars.png");
-    z-index: 1;
+    z-index: 1; // Background
   }
 
   // Responsive adjustments
