@@ -123,7 +123,7 @@ const Contact = () => {
       <footer className="footer">
         <div className="footer-content">
           <p className="namelogo">
-          <img src="./public/namelogo.png" alt="namelogo" className="logo-image" />
+          <img src="/namelogo.png" alt="namelogo" className="logo-image" />
           </p>
           <div className="social-icons">
             <a href="https://github.com/yoursyuvii" target="_blank" rel="noopener noreferrer"><FiGithub /></a>
